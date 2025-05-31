@@ -2,40 +2,82 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Gwantana Kiboigo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Imported fonts: 'Bebas Neue' & 'Rubik' (rubik weights: 400, 500, 700) -->
+    
 <style>
 
         body {
             background-color: rgb(118, 44, 44);
+            margin: 0;
+            padding: 0;
+
         }
 
-        .navbar {
-            height: 60px;
+        a {
+            font-family: 'Bebas Neue';
+        }
+
+        .sidebar {
+            width: 250px;                 
+            height: 100%;
+
             background-color: #ffffff; 
-            color: white;
+
             display: flex;
-            align-items: center;
-            padding: 0 20px;
-            justify-content: space-around;
-            border-radius: 20px;
-            border-color: #3cac4d;
-            border-style: solid;
-            border-width: 10px;
+            flex-direction: column;
+
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            top: 0; left: 0;
+            position: fixed;
+            
         }
 
-        .navbarElement {
+        .sidebarElement {
+
             color: rgb(0, 0, 0);
-            font-size: 30px;
+            font-family: 'Bebas Neue';
+            font-size: 40px;
             
+            padding-left: 15px;
+            margin-bottom: 15px;
+
+        }
+
+        .spacer {
+            flex-grow: 1;
+        }
+
+        #sidebarName {
+    
+            font-size: 60px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        #ContactMe {
+            font-size: 50px;
+            padding-left: 0;
+            align-self: center;
         }
 
     </style>
 </head>
 <body>
 
-<div class="navbar">
-  <a href="#" class="navbarElement">Home</a>
-  <a href="#" class="navbarElement">Programming</a>
-  <a href="#" class="navbarElement">Art</a>
+<div class="sidebar">
+    <h1 class="sidebarElement" id="sidebarName">Gwantana Kiboigo</h1>
+    <a class="sidebarElement">Home</a>
+    <a class="sidebarElement">Resume</a>
+    <a class="sidebarElement">Projects</a>
+    <a class="sidebarElement">Art</a>
+
+  <div class="spacer"></div>
+
+  <a class="sidebarElement" id="ContactMe">Contact Me</a>
 </div>
     
 </body>
