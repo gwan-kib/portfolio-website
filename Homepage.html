@@ -1,104 +1,158 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Gwantana Kiboigo</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Imported fonts: 'Bebas Neue' & 'Rubik' (rubik weights: 400, 500, 700) -->
-    
-<style>
+    <head>
+        <title>Gwantana Kiboigo</title>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+        <!-- Imported fonts: 'Bebas Neue' & 'Rubik' (rubik weights: 400, 500, 700) -->
+        
+        <script>
 
-        body {
-            background-color: rgb(118, 44, 44);
-            margin: 0;
-            padding: 0;
+            function dropdownMenu() {
+                const dropdown = document.getElementById("artMenu");
 
-        }
+                dropdown.classList.toggle("open");
 
-        a {
-            font-family: 'Bebas Neue';
-        }
+                if ( dropdown.classList.contains("open")) { // to open menu
+                     dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
 
-        a:hover {
-            color: rgb(77, 77, 77);
-            cursor: pointer;
-        }
+                     setTimeout(() => {
+                        dropdown.style.transision = 'opacity';
+                    }, 300);
+                } else {    // to close menu
+                    setTimeout(() => {
+                        dropdown.style.maxHeight =  '0px'    
+                    }, 300);
+                     
+                }
 
-        .sidebar {
-            width: 250px;                 
-            height: 100%;
+            }
 
-            background-color: #ffffff; 
+        </script>
 
-            display: flex;
-            flex-direction: column;
+        <style>
 
-            align-items: flex-start;
-            justify-content: flex-start;
+                body {
+                    background-color: rgb(118, 44, 44);
+                    margin: 0;
+                    padding: 0;
+                }
 
-            top: 0; left: 0;
-            position: fixed;
+                a {
+                    font-family: 'Bebas Neue';
+                }
+
+                .sidebar :hover, button:hover {
+                    color: rgb(77, 77, 77);
+                    cursor: pointer;
+                }
+
+                .sidebar {
+                    width: 250px;                 
+                    height: 100%;
+
+                    background-color: #ffffff; 
+
+                    display: flex;
+                    flex-direction: column;
+
+                    align-items: flex-start;
+                    justify-content: flex-start;
+
+                    top: 0; left: 0;
+                    position: fixed;
+                    
+                }
+
+                .sidebarElement{
+
+
+                    background: none;
+                    color: rgb(0, 0, 0);
+                    font-family: 'Bebas Neue';
+                    font-size: 40px;
+                    
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    padding-left: 20px;
+                    margin-bottom: 15px;
+                    text-align: left;
+
+                }
+
+                #artButton:hover img {
+                    filter: brightness(0) saturate(100%) invert(50%) grayscale(100%);
+                }
+
+                .spacer {
+                    flex-grow: 1;
+                }
+
+                #sidebarName {
+                    font-size: 60px;
+                    letter-spacing: 1.5px;
+
+                    margin-top: 10px;
+                    margin-bottom: 20px;
+                }
+
+                #ContactMe {
+                    font-size: 50px;
+                    padding-left: 0;
+                    align-self: center;
+                }
+
+                #artMenu a {
+                    font-size: 30px;
+                }
+
+                .dropdownMenu {
+                    max-height: 0;
+                    opacity: 0;
+
+                    overflow: hidden;
+
+                    transition:
+                        opacity .5s ease;
+
+                }
+
+                .dropdownMenu.open {
+                    max-height: 1;
+                    opacity: 1;
+                }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <h1 class="sidebarElement" id="sidebarName">
+                <strong>Gwantana Kiboigo</strong>
+            </h1>
+            <a class="sidebarElement">
+                Home
+                </a>
+            <a class="sidebarElement">
+                Resume
+            </a>
+            <a class="sidebarElement">
+                Projects
+            </a>
+            <button class="sidebarElement"  id="artButton" onclick="dropdownMenu()" style="margin-bottom: 0;">
+                Art <img src="dropdownIcon.png" alt="dropdownIcon" style="width: 16px; height: 16px; margin-left: 1px; margin-bottom: 6px;">
+            </button>
+                <div class="dropdownMenu" id="artMenu">
+                            <a class="sidebarElement">Personal</a>
+                            <a class="sidebarElement">Commissions</a>
+                </div>
             
-        }
 
-        .sidebarElement {
+            <div class="spacer"></div>
 
-            color: rgb(0, 0, 0);
-            font-family: 'Bebas Neue';
-            font-size: 40px;
+            <a class="sidebarElement" id="ContactMe">Contact Me</a>
+        </div>
             
-            padding-left: 15px;
-            margin-bottom: 15px;
-
-        }
-
-        .sidebarElement:hover img {
-            filter: brightness(0) saturate(100%) invert(50%) grayscale(100%);
-        }
-
-        .spacer {
-            flex-grow: 1;
-        }
-
-        #sidebarName {
-            font-size: 60px;
-            letter-spacing: 1.5px;
-
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-
-        #ContactMe {
-            font-size: 50px;
-            padding-left: 0;
-            align-self: center;
-        }
-
-    </style>
-</head>
-<body>
-
-<div class="sidebar">
-    <h1 class="sidebarElement" id="sidebarName">
-        Gwantana Kiboigo
-    </h1>
-    <a class="sidebarElement">
-        Home
-        </a>
-    <a class="sidebarElement">
-        Resume
-    </a>
-    <a class="sidebarElement">
-        Projects
-    </a>
-    <a class="sidebarElement">
-        Art <img src="dropdownIcon.png" alt="dropdownIcon" style="width: 16px; height: 16px; margin-left: 1px; margin-bottom: 6px;">
-    </a>
-
-  <div class="spacer"></div>
-
-  <a class="sidebarElement" id="ContactMe">Contact Me</a>
-</div>
-    
-</body>
+    </body>
 </html>
