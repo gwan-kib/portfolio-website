@@ -28,6 +28,17 @@
 
             }
 
+            function copyText() {
+                const text = document.getElementById("sidebarName").innerText;
+
+                navigator.clipboard.writeText(text)
+                .then(() => {
+                    alert("Copied to clipboard!");
+                }) .catch((err) => {
+                    console.error("Failed to copy: ", err);
+            });
+  }
+
         </script>
 
         <style>
@@ -128,7 +139,7 @@
     <body>
 
         <div class="sidebar">
-            <h1 class="sidebarElement" id="sidebarName">
+            <h1 class="sidebarElement" id="sidebarName" onclick="copyText()">
                 <strong>Gwantana Kiboigo</strong>
             </h1>
             <a class="sidebarElement">
