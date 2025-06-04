@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Gwantana Kiboigo</title>
+
+        <link rel="icon" type="image/png" href="websiteLogoGold.png"> <!-- tab icon -->
+
+        <title>Gwantana Kiboigo</title> <!-- tab name -->
         
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
         <!-- Imported fonts: 'Bebas Neue' & 'Rubik' (rubik weights: 400, 500, 700) -->
@@ -9,31 +12,24 @@
         <!-- Imported font: 'Bungee' -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <!-- Imported font: 'FontAwesome' -->
-
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <!-- Imported font: Google Symbols -->
 
         <script>
 
-            function dropdownMenu() {
+            function dropdownMenu() { // to open and close dropdown menu
                 const dropdown = document.getElementById("artMenu");
 
                 dropdown.classList.toggle("open");
 
-                if ( dropdown.classList.contains("open")) { // to open menu
-                     dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
-
-                     setTimeout(() => {
-                        dropdown.style.transision = 'opacity';
-                    }, 300);
-                } else {    // to close menu
-                    setTimeout(() => {
-                        dropdown.style.maxHeight =  '0px'    
-                    }, 300);
-                     
+                if (dropdown.classList.contains("open")) {
+                    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+                } else {
+                    dropdown.style.maxHeight = "0px";
                 }
-
             }
 
-            function copyText() {
+            function copyText() { // supposed to be used to copy my name to the clipboard when its clicked
                 const text = document.getElementById("sidebarName").innerText;
 
                 navigator.clipboard.writeText(text)
@@ -44,7 +40,7 @@
             });
             }
 
-            function toggleSidebar() {
+            function toggleSidebar() { // to open and close the sidebar
                 const sidebar = document.querySelector('.sidebar');
                 sidebar.classList.toggle('collapsed');
             }
@@ -60,17 +56,12 @@
                     padding: 0;
                 }
 
-                a {
+                a {  /* all links */
                     font-family: 'Bebas Neue';
                 }
 
-                .sidebar :hover, button:hover {
-                    color: #727272;
-                    cursor: pointer;
-                }
-
-                .sidebar {
-                    width: 350px;                 
+                .sidebar { /* the whole sidebar */
+                    width: 175px;                 
                     height: 100%;
 
                     background-color: #fec345; 
@@ -78,140 +69,169 @@
                     display: flex;
                     flex-direction: column;
 
-                    align-items: flex-start;
+                    align-items: center;
                     justify-content: flex-start;
 
                     top: 0; left: 0;
                     position: fixed;
                     
+                    transition: height 0.3s ease;
+                    overflow: hidden;
+                    
                 }
 
-                .sidebarElement{
+                .sidebarElement{ /* each element in the sidebar */
 
                     background: none;
                     color: #141414;
                     font-family: 'Bungee';
-                    font-size: 40px;
+                    font-size: 25px;
+                    opacity: 1;
                     
                     border: none;
                     padding: 0;
                     margin: 0;
-                    padding-left: 20px;
                     margin-bottom: 15px;
-                    text-align: left;
+                    text-align: center;
 
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+
+                    transition: opacity 0.2s ease;
                 }
 
-                #artButton:hover img {
-                    filter: brightness(0) saturate(100%) invert(50%) grayscale(100%);
+                .sidebar.collapsed { /* when the sidebar is closed */
+                    height: 65px;  
+                    overflow: hidden; 
                 }
 
-                .spacer {
-                    flex-grow: 1;
+                .sidebar.collapsed .sidebarElement:not(:first-child) .dropdownElement { /* remove everything expect the menu icon when sidebar is closed */
+                    display: none;
                 }
 
-                #sidebarName {
-                    font-size: 50px;
+                .material-symbols-outlined { /* for the icons in the sidebar */
+                    margin-bottom: 5px;
+                    font-size: 40px;
+                    
+                    fill: 0;
+                    padding: 0;
+                }
+
+                .sidebar :hover { /* when you hover over elements in the sidebar */
+                    color: #727272;
+                    cursor: pointer;
+                }
+
+                #sidebarName {  /* my full name at the top of the sidebar */
+                    font-size: 25px;
                     letter-spacing: 1.5px;
 
                     margin-top: 10px;
                     margin-bottom: 20px;
                 }
 
-                #ContactMe {
-                    font-size: 50px;
+                #ContactMe {  /* contact me button at the bottem of the sidebar */
+                    font-size: 20px;
                     padding-left: 0;
                     align-self: center;
                 }
 
-                #artMenu a {
-                    font-size: 30px;
+                #artMenu a {  /* for the links in the ART dropdown menu */
+                    align-self: center;
                 }
 
-                .dropdownMenu {
+                .dropdownMenu {  /* dropdown menu when its closed */
                     max-height: 0;
-                    opacity: 0;
 
                     overflow: hidden;
 
-                    transition:
-                        opacity .5s ease;
+                    transition: max-height .35s ease;
 
                 }
 
-                .dropdownMenu.open {
-                    max-height: 1;
-                    opacity: 1;
-                }
-
-                .dropdownElement {
+                .dropdownElement {  /* for all the items in the dropdown menu */
 
                     background: none;
                     color: #141414;
                     font-family: 'Bungee';
-                    font-size: 40px;
+                    font-size: 20px;
                     font-weight: none;
 
                     border: none;
                     padding: 0;
                     margin: 0;
-                    padding-left: 20px;
-                    margin-bottom: 15px;
-                    text-align: left;
-
-                }
-
-                .sidebar.collapsed {
-                    width: 80px;
-                    align-items: center;
-                    opacity: 1;
-                }
-
-                .sidebar.collapsed .label {
-                    display: none;
-                }
-
-                .sidebar.collapsed .sidebarElement .sidebar.collapsed .dropdownElement {
-                    padding-left: 0;
-                    justify-content: center;
+                    margin-top: 15px;
                     text-align: center;
+
                 }
 
-                .sidebarElement i {
-                margin-right: 10px;
-                font-size: 24px;
+                .dropdownWrapper { /* to center things in the dropdown menu */
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
                 }
-
+                
         </style>
     </head>
     <body>
 
         <div class="sidebar">
-            <button id="toggleSidebar" onclick="toggleSidebar()" class="sidebarElement" style="padding-bottom: 0px">☰</button>
-            <h1 class="sidebarElement" id="sidebarName" onclick="copyText()"><span class="label">
-                <strong>Gwantana Kiboigo</strong>
-            </span></h1>
-            <a class="sidebarElement"><i class="fas fa-home"></i><span class="label">
-                Home
-            </span></a>
-            <a class="sidebarElement"><i class="fas fa-file"></i><span class="label">
-                Resume
-            </span></a>
-            <a class="sidebarElement"><i class="fas fa-project-diagram"></i><span class="label">
-                Projects
-            </span></a>
-            <button class="sidebarElement"  id="artButton" onclick="dropdownMenu()" style="margin-bottom: 0;"><span class="label">
-                Art <img src="dropdownIcon.png" alt="dropdownIcon" style="width: 16px; height: 16px; margin-left: 1px; margin-bottom: 6px;">
-            </span></button>
-                <div class="dropdownMenu" id="artMenu"><span class="label">
-                            <a class="dropdownElement">Personal</a>
-                            <a class="dropdownElement">Commissions</a>
-                </span></div>
+            <button id="toggleSidebar" onclick="toggleSidebar()" class="sidebarElement" style="padding-top: 10px">
+                <i class="material-symbols-outlined">menu</i>
+            </button>
+
+            <h1 class="sidebarElement" id="sidebarName">
+                <span class="label">
+                    <strong>Gwantana Kiboigo</strong>
+                </span>
+            </h1>
+
+            <a class="sidebarElement">
+                <i class="material-symbols-outlined">home</i>
+                <span class="label">
+                    Home
+                </span>
+            </a>
+
+            <a class="sidebarElement">
+                <i class="material-symbols-outlined">description</i>
+                <span class="label">
+                    Resume
+                </span>
+            </a>
             
+            <a class="sidebarElement">
+                <i class="material-symbols-outlined">dashboard</i>
+                <span class="label">
+                    Projects
+                </span>
+            </a>
 
-            <div class="spacer"></div>
+            <button class="sidebarElement"  id="artButton" onclick="dropdownMenu()" style="margin-bottom: 0;">
+                <i class="material-symbols-outlined" style="transform: scaleY(-1);">stylus_pen</i>
+                <span class="label" style="display: flex; align-items: center; gap: 4px;">
+                    Art <i class="material-symbols-outlined" style="font-weight: bold; margin: 0px;">keyboard_arrow_down</i>
+                </span>
+            </button>
+            
+            <div class="dropdownMenu" id="artMenu">
+                <span class="dropdownWrapper">
+                        <a class="dropdownElement">Personal</a>
+                        <a class="dropdownElement">Commissions</a>
+                </span>
+            </div>
+            
+            <div style="flex-grow: 1;"></div>
 
-            <a class="sidebarElement" id="ContactMe"><span class="label">Contact Me</span></a>
+            <a class="sidebarElement" id="ContactMe">
+                <span class="label">
+                Contact Me
+                </span>
+            </a>
         </div>
             
     </body>
