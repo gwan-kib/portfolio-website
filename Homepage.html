@@ -164,6 +164,7 @@
                 .sidebar.collapsed {
                     width: 80px;
                     align-items: center;
+                    opacity: 1;
                 }
 
                 .sidebar.collapsed .label {
@@ -187,7 +188,7 @@
 
         <div class="sidebar">
             <button id="toggleSidebar" onclick="toggleSidebar()" class="sidebarElement" style="padding-bottom: 0px">☰</button>
-            <h1 class="sidebarElement" id="sidebarName" onclick="copyText()"><span class="label"></span>
+            <h1 class="sidebarElement" id="sidebarName" onclick="copyText()"><span class="label">
                 <strong>Gwantana Kiboigo</strong>
             </span></h1>
             <a class="sidebarElement"><i class="fas fa-home"></i><span class="label">
@@ -201,11 +202,11 @@
             </span></a>
             <button class="sidebarElement"  id="artButton" onclick="dropdownMenu()" style="margin-bottom: 0;"><span class="label">
                 Art <img src="dropdownIcon.png" alt="dropdownIcon" style="width: 16px; height: 16px; margin-left: 1px; margin-bottom: 6px;">
-            </button>
-                <div class="dropdownMenu" id="artMenu">
+            </span></button>
+                <div class="dropdownMenu" id="artMenu"><span class="label">
                             <a class="dropdownElement">Personal</a>
                             <a class="dropdownElement">Commissions</a>
-                </div></span>
+                </span></div>
             
 
             <div class="spacer"></div>
