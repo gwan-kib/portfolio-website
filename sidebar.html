@@ -1,0 +1,56 @@
+  <div th:fragment="sidebar">
+            <div class="sidebar"> 
+            <button id="toggleSidebar" onclick="toggleSidebar()" class="sidebarElement" style="padding-top: 10px">
+                <i class="material-symbols-outlined">menu</i>
+            </button>
+
+            <h1 class="sidebarElement" id="sidebarName">
+                <span class="label">
+                    <strong>Gwantana Kiboigo</strong>
+                </span>
+            </h1>
+
+            <a class="sidebarElement" href="Homepage.html">
+                <i class="material-symbols-outlined">home</i>
+                <span class="label">
+                    Home
+                </span>
+            </a>
+
+            <a class="sidebarElement" href="Resume.html">
+                <i class="material-symbols-outlined">description</i>
+                <span class="label">
+                    Resume
+                </span>
+            </a>
+            
+            <a class="sidebarElement" href="Projects.html">
+                <i class="material-symbols-outlined">dashboard</i>
+                <span class="label">
+                    Projects
+                </span>
+            </a>
+
+            <button class="sidebarElement"  id="artButton" onclick="dropdownMenu()" style="margin-bottom: 0;">
+                <i class="material-symbols-outlined" style="transform: scaleY(-1);">stylus_pen</i>
+                <span class="label" style="display: flex; align-items: center; gap: 4px;">
+                    Art <i class="material-symbols-outlined" style="font-weight: bold; margin: 0px;">keyboard_arrow_down</i>
+                </span>
+            </button>
+            
+            <div class="dropdownMenu" id="artMenu">
+                <span class="dropdownWrapper">
+                        <a class="dropdownElement" href="PersonalArt.html">Personal</a>
+                        <a class="dropdownElement" href="CommissionArt.html">Commissions</a>
+                </span>
+            </div>
+            
+            <div style="flex-grow: 1;"></div>
+
+            <a class="sidebarElement" id="ContactMe">
+                <span class="label">
+                Contact Me
+                </span>
+            </a>
+        </div>
+  </div>
