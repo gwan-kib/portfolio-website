@@ -1,31 +1,12 @@
 <!DOCTYPE html> <!-- To run: type 'mvn spring-boot:run' into terminal the go to browser and search http://localhost:8080 -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <!-- tab icon -->
-        <link rel="icon" type="image/png" href="websiteLogoGold.png"> 
-
-        <!-- tab name -->
-        <title>Gwantana Kiboigo</title> 
-
-        <!-- Imported font: 'Bungee' -->
-        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-
-        <!-- Imported font: 'FontAwesome' -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-        <!-- Imported font: Google Symbols Rounded -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet" />
-
-
-        
-        <!-- css styling shit -->
-        <link rel="stylesheet" href="style.css"> 
-
-    </head>
+    
+    <head th:replace="Fragments/CommonHead :: head"></head>
+    
     <body>
 
         <!-- sidebar information -->
-        <div th:replace="sidebar :: sidebar"></div>
+        <div th:replace="Fragments/sidebar :: sidebar"></div>
         
         <!-- JavaScript -->
         <script src="script.js"></script> 
