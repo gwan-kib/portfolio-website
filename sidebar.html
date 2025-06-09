@@ -1,7 +1,7 @@
   <div th:fragment="sidebar">
             <div class="sidebar"> 
             <button id="toggleSidebar" onclick="toggleSidebar()" class="sidebarElement" style="padding-top: 10px">
-                <i class="material-symbols-outlined">menu</i>
+                <span class="material-symbols-rounded">menu</span>
             </button>
 
             <h1 class="sidebarElement" id="sidebarName">
@@ -10,38 +10,38 @@
                 </span>
             </h1>
 
-            <a class="sidebarElement" href="Homepage.html">
-                <i class="material-symbols-outlined">home</i>
+            <a class="sidebarElement" href="/">
+                <span class="material-symbols-rounded">home</span>
                 <span class="label">
                     Home
                 </span>
             </a>
 
-            <a class="sidebarElement" href="Resume.html">
-                <i class="material-symbols-outlined">description</i>
+            <a class="sidebarElement" href="/resume">
+                <span class="material-symbols-rounded">description</span>
                 <span class="label">
                     Resume
                 </span>
             </a>
             
-            <a class="sidebarElement" href="Projects.html">
-                <i class="material-symbols-outlined">dashboard</i>
+            <a class="sidebarElement" href="/projects">
+                <span class="material-symbols-rounded">dashboard</span>
                 <span class="label">
                     Projects
                 </span>
             </a>
 
             <button class="sidebarElement"  id="artButton" onclick="dropdownMenu()" style="margin-bottom: 0;">
-                <i class="material-symbols-outlined" style="transform: scaleY(-1);">stylus_pen</i>
+                <span class="material-symbols-rounded" style="display: inline-block; transform: rotate(180deg);">stylus_pen</span>
                 <span class="label" style="display: flex; align-items: center; gap: 4px;">
-                    Art <i class="material-symbols-outlined" style="font-weight: bold; margin: 0px;">keyboard_arrow_down</i>
+                    Art <span class="material-symbols-rounded" style="font-weight: bold; margin: 0px;">keyboard_arrow_down</span>
                 </span>
             </button>
             
             <div class="dropdownMenu" id="artMenu">
                 <span class="dropdownWrapper">
-                        <a class="dropdownElement" href="PersonalArt.html">Personal</a>
-                        <a class="dropdownElement" href="CommissionArt.html">Commissions</a>
+                        <a class="dropdownElement" href="/personal-art">Personal</a>
+                        <a class="dropdownElement" href="/commissions">Commissions</a>
                 </span>
             </div>
             
