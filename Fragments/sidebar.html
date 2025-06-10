@@ -1,5 +1,5 @@
   <div th:fragment="sidebar">
-            <div class="sidebar"> 
+            <div class="sidebar collapsed"> 
                 <button id="toggleSidebar" onclick="toggleSidebar()" class="sidebarElement" style="padding-top: 10px">
                     <span class="material-symbols-rounded">menu</span>
                 </button>
@@ -32,7 +32,7 @@
                 </a>
 
                 <button class="sidebarElement"  id="artButton" onclick="dropdownMenu()" style="margin-bottom: 0;">
-                    <span class="material-symbols-rounded" style="display: inline-block; transform: rotate(0deg) scale(1.1);">stylus_pen</span>
+                    <span class="material-symbols-rounded" id="stylusIcon">stylus_pen</span>
                     <span class="label" style="display: flex; align-items: center; gap: 4px;">
                         Art <span class="material-symbols-rounded" style="font-weight: bold; margin: 0px;">keyboard_arrow_down</span>
                     </span>
@@ -40,6 +40,7 @@
                 
                 <div class="dropdownMenu" id="artMenu">
                     <span class="dropdownWrapper">
+                            <hr class="dropdownDivider" />
                             <a class="dropdownElement" href="/personal-art">Personal</a>
                             <a class="dropdownElement" href="/commissions">Commissions</a>
                     </span>
