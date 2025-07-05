@@ -1,4 +1,4 @@
-## My first attempt at creating a portfolio website to showcase my projects and artistic endeavours.
+## My first attempt at creating a portfolio website to showcase my projects and artistic endeavours. (many files missing, will ot work)
 
 # FEATURES
 ```
@@ -9,7 +9,7 @@
 --------
 # BUILT WITH
 ```
-HTML5, CSS3, JavaScript - all inside VSCode
+Java, HTML5, CSS3, JavaScript - all inside VSCode
 ```
 
 ----------
