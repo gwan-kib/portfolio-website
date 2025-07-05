@@ -12,7 +12,7 @@ Interactive sidebar
 # FOLDER STRUCTURE
 ----------------
 ## portfolio-website/
-- CommissionArt.html  (page to provide information on aquireing and subsequently showcaseing commisioned art)
+- `CommissionArt.html`  (page to provide information on aquireing and subsequently showcaseing commisioned art)
 - Homepage.html  (standard home page with about me sections and basic run down of website)
 - PersonalArt.html  (page to showcase personal art)
 - Projects.html  (page to showcase programming related projects)
