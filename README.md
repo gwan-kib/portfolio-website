@@ -34,7 +34,18 @@ portfolio-website/
 ```
 
 ----------
-# HOW TO RUN LOCALLY
+# HOW TO RUN LOCALLY (currently bugged, prolly wont open)
+```
+(type text following '-' into your terminal)
+
+Navigate to:
+- cd C:\path\to\demo
+
+Plug this into the terminal:
+ - mvn spring-boot:run
+
+Then run Homepage.html and the website should work as intended
+```
 
 ------------------
 # AUTHOR
