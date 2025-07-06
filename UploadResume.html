@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <head th:replace="Fragments/CommonHead :: head"></head>
+</head>
+<body style="background-color: #141414; color: white; font-family: Arial;">
+    <h1>Upload New Resume</h1>
+    <form method="post" action="/upload-resume" enctype="multipart/form-data">
+        <input type="file" name="file" accept="application/pdf" required />
+        <button type="submit">Upload</button>
+    </form>
+    <p th:if="${message}" th:text="${message}"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
